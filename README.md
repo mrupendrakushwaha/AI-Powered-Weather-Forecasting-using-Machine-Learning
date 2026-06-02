@@ -41,6 +41,12 @@ This project contributes to sustainability by improving weather forecasting thro
 
 By leveraging AI for weather prediction, this project demonstrates how Artificial Intelligence can support sustainable development and environmental management.
 
+## 🎯 SDG Alignment
+
+Primary SDG: SDG 13 – Climate Action
+
+This project supports climate action by using Machine Learning to forecast weather conditions, helping individuals, farmers, and organizations make informed decisions and reduce climate-related risks.
+
 ## 🛠️ Technologies Used
 
 - Python
@@ -239,7 +245,6 @@ AI-Powered-Weather-Forecasting-using-Machine-Learning/
 ├── 📓 Weather_Forecasting.ipynb      # Main Jupyter Notebook
 ├── 📊 seattle-weather.csv            # Dataset
 ├── 📄 README.md                      # Project Documentation
-├── 📦 requirements.txt               # Required Libraries
 │
 ├── 📁 output_images/
 │   ├── 🌡️ heatmap.png
@@ -249,12 +254,17 @@ AI-Powered-Weather-Forecasting-using-Machine-Learning/
 │   ├── 🌧️ rain_output.png
 │   ├── 🌫️ fog_output.png
 │   ├── ❄️ snow_output.png
-│   └── 🌦️ drizzle_output.png
 │
 └── 🤖 Trained Machine Learning Models
 ```
 
+## Responsible AI Considerations
 
+- Predictions are based on historical weather data and may not always be accurate.
+- Model performance depends on data quality and dataset limitations.
+- No personal or sensitive user data is collected or processed.
+- Predictions should be used as decision-support tools and not as the sole basis for critical decisions.
+- The project promotes transparent and ethical use of AI for sustainability.
 ---
 
 ## 🔮 Future Improvements
