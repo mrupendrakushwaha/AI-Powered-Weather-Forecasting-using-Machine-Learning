@@ -164,36 +164,79 @@ Shows the frequency of different weather conditions present in the dataset.
 ### Sample Input
 
 ```text
+☀️ SUN
+Precipitation: 0
+Max Temperature: 25
+Min Temperature: 15
+Wind Speed: 2
+
+🌧️ RAIN
 Precipitation: 10
-Max Temperature: 0
-Min Temperature: -5
-Wind Speed: 5
+Max Temperature: 12
+Min Temperature: 8
+Wind Speed: 4
+
+🌫️ FOG
+Precipitation: 0
+Max Temperature: 10
+Min Temperature: 5
+Wind Speed: 1
+
+❄️ SNOW
+Precipitation: 5
+Max Temperature: 2
+Min Temperature: -3
+Wind Speed: 2
+
+🌦️ DRIZZLE
+Precipitation: 2
+Max Temperature: 14
+Min Temperature: 10
+Wind Speed: 2
 ```
 
-### Predicted Output
 
-```text
-Predicted Weather: Snow
-```
+# 📸 Project Outputs
+
+## ☀️ Sun Prediction
+![Sun Output](sun_output.png)
+
+## 🌧️ Rain Prediction
+![Rain Output](rain_output.png)
+
+## 🌫️ Fog Prediction
+![Fog Output](fog_output.png)
+
+## ❄️ Snow Prediction
+![Snow Output](snow_output.png)
+
+## 🌦️ Drizzle Prediction
+🌦️ Drizzle: Light rain with very small water droplets.
 
 ---
-
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```text
-AI-Powered-Weather-Forecasting/
+AI-Powered-Weather-Forecasting-using-Machine-Learning/
 │
-├── Weather_Forecasting.ipynb
-├── seattle-weather.csv
-├── README.md
-├── output_images/
-│   ├── heatmap.png
-│   ├── confusion_matrix.png
-│   ├── feature_importance.png
-│   └── prediction_output.png
+├── 📓 Weather_Forecasting.ipynb      # Main Jupyter Notebook
+├── 📊 seattle-weather.csv            # Dataset
+├── 📄 README.md                      # Project Documentation
+├── 📦 requirements.txt               # Required Libraries
 │
-└── requirements.txt
+├── 📁 output_images/
+│   ├── 🌡️ heatmap.png
+│   ├── 📈 confusion_matrix.png
+│   ├── 📊 feature_importance.png
+│   ├── ☀️ sun_output.png
+│   ├── 🌧️ rain_output.png
+│   ├── 🌫️ fog_output.png
+│   ├── ❄️ snow_output.png
+│   └── 🌦️ drizzle_output.png
+│
+└── 🤖 Trained Machine Learning Models
 ```
+
 
 ---
 
