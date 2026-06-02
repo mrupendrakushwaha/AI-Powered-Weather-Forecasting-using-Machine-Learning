@@ -29,6 +29,17 @@ The project demonstrates the complete Machine Learning workflow including data p
 ✅ Random Forest Classification Model
 
 ---
+## 🌱 Sustainability Impact
+
+This project contributes to sustainability by improving weather forecasting through Machine Learning.
+
+- Supports farmers in crop planning and agricultural decision-making.
+- Helps in efficient water resource and irrigation management.
+- Assists in disaster preparedness for extreme weather conditions.
+- Reduces resource wastage through better weather awareness.
+- Encourages climate-aware and environmentally responsible decisions.
+
+By leveraging AI for weather prediction, this project demonstrates how Artificial Intelligence can support sustainable development and environmental management.
 
 ## 🛠️ Technologies Used
 
