@@ -45,7 +45,8 @@ The project demonstrates the complete Machine Learning workflow including data p
 ## 📂 Dataset Information
 
 The project uses the Seattle Weather Dataset containing historical weather records.
-seattle-weather.csv
+
+[Seattle Weather Dataset](dataset/seattle-weather.csv)
 
 ### Dataset Features
 
@@ -141,26 +142,28 @@ The classification report provides detailed insights into model performance acro
 ## 🔲 Confusion Matrix
 
 A confusion matrix was generated to visualize the model's prediction performance and identify classification errors.
-![Confusion Matrix](images/confusion_matrix.png)
+![Confusion Matrix](visualizations/confusion_matrix.png)
+
 ---
 
 ## 📊 Data Visualizations
+![Dataset Preview](visualizations/dataset_preview.png)
 
-![Dataset Preview](images/dataset_preview.png)
+
 
 ### 🔥 Correlation Heatmap
 
 Shows relationships between weather features and helps identify correlations among variables.
-![Heatmap](images/heatmap.png)
+![Heatmap](visualizations/heatmap.png)
 
 ### 📈 Feature Importance Analysis
 
 Displays the contribution of each feature toward weather prediction.
-![Feature Importance](images/feature_importance.png)
+![Feature Importance](visualizations/feature_importance.png)
 
 ### 🌦️ Weather Distribution
 Shows the frequency of different weather conditions present in the dataset.
-![Weather Distribution](images/weather_distribution.png)
+![Weather Distribution](visualizations/weather_distribution.png)
 
 ---
 
@@ -201,17 +204,17 @@ Wind Speed: 2
 
 # 📸 Project Outputs
 
-## ☀️ Sun Prediction
-![Sun Output](sun_output.png)
+## 🌞 Sun Prediction
+![Sun Output](outputs/sun_output.png)
 
 ## 🌧️ Rain Prediction
-![Rain Output](rain_output.png)
+![Rain Output](outputs/rain_output.png)
 
 ## 🌫️ Fog Prediction
-![Fog Output](fog_output.png)
+![Fog Output](outputs/fog_output.png)
 
 ## ❄️ Snow Prediction
-![Snow Output](snow_output.png)
+![Snow Output](outputs/snow_output.png)
 
 ## 🌦️ Drizzle Prediction
 🌦️ Drizzle: Light rain with very small water droplets.
