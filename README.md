@@ -45,6 +45,7 @@ The project demonstrates the complete Machine Learning workflow including data p
 ## 📂 Dataset Information
 
 The project uses the Seattle Weather Dataset containing historical weather records.
+seattle-weather.csv
 
 ### Dataset Features
 
@@ -140,28 +141,30 @@ The classification report provides detailed insights into model performance acro
 ## 🔲 Confusion Matrix
 
 A confusion matrix was generated to visualize the model's prediction performance and identify classification errors.
-
+![Confusion Matrix](images/confusion_matrix.png)
 ---
 
 ## 📊 Data Visualizations
 
+![Dataset Preview](images/dataset_preview.png)
+
 ### 🔥 Correlation Heatmap
 
 Shows relationships between weather features and helps identify correlations among variables.
+![Heatmap](images/heatmap.png)
 
 ### 📈 Feature Importance Analysis
 
 Displays the contribution of each feature toward weather prediction.
+![Feature Importance](images/feature_importance.png)
 
 ### 🌦️ Weather Distribution
-
 Shows the frequency of different weather conditions present in the dataset.
+![Weather Distribution](images/weather_distribution.png)
 
 ---
 
-## 📸 Project Output
-
-### Sample Input
+### Project Input
 
 ```text
 ☀️ SUN
