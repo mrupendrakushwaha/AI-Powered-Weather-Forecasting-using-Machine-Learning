@@ -363,10 +363,18 @@ if search and city.strip():
 
             # ── Footer ────────────────────────────────────────────────────
             st.markdown("---")
-            st.caption(f"🕒 Last updated: {datetime.now().strftime('%d %b %Y, %I:%M %p')}  •  "
-                       f"📍 Coordinates: {lat:.2f}°N, {lon:.2f}°E  •  "
-                       f"Data: Open-Meteo API")
+            st.caption
+            from datetime import datetime
+            import pytz
 
+            ist = pytz.timezone("Asia/Kolkata")
+            current_time = datetime.now(ist).strftime("%d %b %Y, %I:%M %p")
+
+            st.caption(
+    f"🕒 Last updated: {current_time} • "
+    f"📍 Coordinates: {lat:.2f}°N, {lon:.2f}°E • "
+    f"Data: Open-Meteo API"
+)
 elif search:
     st.warning("⚠️ Please enter a city name.")
 else:
