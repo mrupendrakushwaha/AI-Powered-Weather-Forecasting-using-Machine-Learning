@@ -360,28 +360,33 @@ if search and city.strip():
                     st.caption("📌 Which features your trained Random Forest relies on most for weather prediction.")
                 except Exception:
                     st.info("ML model loaded. Feature importance not available for this model type.")
-# ── Footer ────────────────────────────────────────────────────
-st.markdown("---")
 
-current_time = datetime.now().strftime("%d %b %Y, %I:%M %p")
+         # ── Footer ────────────────────────────────────────────────────
+            st.markdown("---")
 
-st.caption(
-    f"🕒 Last updated: {current_time} • "
-    f"📍 Coordinates: {lat:.2f}°N, {lon:.2f}°E • "
-    f"Data: Open-Meteo API"
-)
-            
- elif search:
-     st.warning("⚠️ Please enter a city name.")
- else:
-    # Welcome screen
- st.markdown("""
+            current_time = datetime.now(
+                ZoneInfo("Asia/Kolkata")
+            ).strftime("%d %b %Y, %I:%M %p")
+
+            st.caption(
+                f"🕒 Last updated: {current_time} • "
+                f"📍 Coordinates: {lat:.2f}°N, {lon:.2f}°E • "
+                f"Data: Open-Meteo API"
+            )
+
+elif search:
+    st.warning("⚠️ Please enter a city name.")
+
+else:
+    st.markdown("""
     <div style="text-align:center; padding: 3rem 0; color: #aaa;">
         <div style="font-size: 5rem;">🌍</div>
-        <div style="font-size: 1.3rem; color: #ccc; margin-top: 1rem;">Enter any city name above to get started</div>
+        <div style="font-size: 1.3rem; color: #ccc; margin-top: 1rem;">
+            Enter any city name above to get started
+        </div>
         <div style="margin-top: 1rem; font-size: 0.9rem;">
-            ✅ Real-time weather &nbsp;|&nbsp; 🤖 ML prediction &nbsp;|&nbsp;
-            📅 7-day forecast &nbsp;|&nbsp; 📈 Interactive charts
+            ✅ Real-time weather | 🤖 ML prediction |
+            📅 7-day forecast | 📈 Interactive charts
         </div>
     </div>
     """, unsafe_allow_html=True)
