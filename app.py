@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 from datetime import datetime, timedelta
-
+from zoneinfo import ZoneInfo
 # ─── Page Config ────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="AI Weather Forecasting",
@@ -276,7 +276,7 @@ if search and city.strip():
             st.markdown('<div class="section-header">📅 7-Day Forecast</div>', unsafe_allow_html=True)
             fcols = st.columns(7)
             for i, col in enumerate(fcols):
-                day_date = datetime.now() + timedelta(days=i)
+                day_date =today = datetime.now(ZoneInfo("Asia/Kolkata"))  + timedelta(days=i)
                 day_name = "Today" if i == 0 else day_date.strftime("%a")
                 fc_code = daily["weather_code"][i]
                 fc_cond, fc_icon = WEATHER_CODES.get(fc_code, ("?", "🌡️"))
@@ -362,15 +362,14 @@ if search and city.strip():
                     st.info("ML model loaded. Feature importance not available for this model type.")
 
             # ── Footer ────────────────────────────────────────────────────
-            st.markdown("---")
-            st.caption
-            from datetime import datetime
-            import pytz
+from zoneinfo import ZoneInfo
+st.markdown("---")
 
-            ist = pytz.timezone("Asia/Kolkata")
-            current_time = datetime.now(ist).strftime("%d %b %Y, %I:%M %p")
+current_time = datetime.now(
+    ZoneInfo("Asia/Kolkata")
+).strftime("%d %b %Y, %I:%M %p")
 
-            st.caption(
+st.caption(
     f"🕒 Last updated: {current_time} • "
     f"📍 Coordinates: {lat:.2f}°N, {lon:.2f}°E • "
     f"Data: Open-Meteo API"
