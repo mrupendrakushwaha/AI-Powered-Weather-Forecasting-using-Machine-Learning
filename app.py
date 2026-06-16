@@ -362,7 +362,6 @@ if search and city.strip():
                     st.info("ML model loaded. Feature importance not available for this model type.")
 
             # ── Footer ────────────────────────────────────────────────────
-from zoneinfo import ZoneInfo
 st.markdown("---")
 
 current_time = datetime.now(
