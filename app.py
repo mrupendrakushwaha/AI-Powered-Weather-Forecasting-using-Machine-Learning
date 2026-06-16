@@ -360,24 +360,22 @@ if search and city.strip():
                     st.caption("📌 Which features your trained Random Forest relies on most for weather prediction.")
                 except Exception:
                     st.info("ML model loaded. Feature importance not available for this model type.")
-
-            # ── Footer ────────────────────────────────────────────────────
+# ── Footer ────────────────────────────────────────────────────
 st.markdown("---")
 
-current_time = datetime.now(
-    ZoneInfo("Asia/Kolkata")
-).strftime("%d %b %Y, %I:%M %p")
+current_time = datetime.now().strftime("%d %b %Y, %I:%M %p")
 
 st.caption(
     f"🕒 Last updated: {current_time} • "
     f"📍 Coordinates: {lat:.2f}°N, {lon:.2f}°E • "
     f"Data: Open-Meteo API"
 )
-elif search:
-    st.warning("⚠️ Please enter a city name.")
-else:
+            
+ elif search:
+     st.warning("⚠️ Please enter a city name.")
+ else:
     # Welcome screen
-    st.markdown("""
+ st.markdown("""
     <div style="text-align:center; padding: 3rem 0; color: #aaa;">
         <div style="font-size: 5rem;">🌍</div>
         <div style="font-size: 1.3rem; color: #ccc; margin-top: 1rem;">Enter any city name above to get started</div>
