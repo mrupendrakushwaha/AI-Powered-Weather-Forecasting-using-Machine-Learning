@@ -162,8 +162,8 @@ def get_weather(lat, lon):
         url = (
             f"https://api.open-meteo.com/v1/forecast?"
             f"latitude={lat}&longitude={lon}"
-            f"&current=temperature_2m,relative_humidity_2m,apparent_temperature,"
-            f"precipitation,wind_speed_10m,weather_code,uv_index"
+            &current=temperature_2m,relative_humidity_2m,apparent_temperature,
+            precipitation,wind_speed_10m,weather_code,uv_index,cloud_cover
             f"&daily=weather_code,temperature_2m_max,temperature_2m_min,"
             f"precipitation_sum,wind_speed_10m_max"
             f"&timezone=auto&forecast_days=7"
@@ -228,10 +228,13 @@ if search and city.strip():
             wind        = curr["wind_speed_10m"]
             precip      = curr["precipitation"]
             uv          = curr.get("uv_index", "N/A")
-            code        = curr["weather_code"]
+            cloud       = curr.get("cloud_cover", 0)
 
             # Weather condition
             cond_name, cond_icon = WEATHER_CODES.get(code, ("UNKNOWN", "🌡️"))
+            if cloud > 60 and cond_name == "SUN":
+                cond_name = "PARTLY CLOUDY"
+                cond_icon = "⛅"
 
             # ML prediction (for the day's forecast features)
             temp_max_today = daily["temperature_2m_max"][0]
