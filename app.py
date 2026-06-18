@@ -162,8 +162,7 @@ def get_weather(lat, lon):
         url = (
             f"https://api.open-meteo.com/v1/forecast?"
             f"latitude={lat}&longitude={lon}"
-            f"&current=temperature_2m,relative_humidity_2m,apparent_temperature,
-            precipitation,wind_speed_10m,weather_code,uv_index,cloud_cover"
+            f"&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,wind_speed_10m,weather_code,uv_index,cloud_cover"
             f"&daily=weather_code,temperature_2m_max,temperature_2m_min,"
             f"precipitation_sum,wind_speed_10m_max"
             f"&timezone=auto&forecast_days=7"
