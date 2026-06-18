@@ -227,6 +227,7 @@ if search and city.strip():
             wind        = curr["wind_speed_10m"]
             precip      = curr["precipitation"]
             uv          = curr.get("uv_index", "N/A")
+            code        = curr["weather_code"]
             cloud       = curr.get("cloud_cover", 0)
 
             # Weather condition
