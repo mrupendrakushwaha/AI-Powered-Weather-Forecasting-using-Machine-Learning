@@ -229,12 +229,22 @@ if search and city.strip():
             uv          = curr.get("uv_index", "N/A")
             code        = curr["weather_code"]
             cloud       = curr.get("cloud_cover", 0)
+            st.write("Cloud Cover:", cloud, "%")
 
             # Weather condition
             cond_name, cond_icon = WEATHER_CODES.get(code, ("UNKNOWN", "🌡️"))
-            if cloud > 60 and cond_name == "SUN":
+            # Better cloud condition mapping
+            if cloud < 30:
+                cond_name = "SUN"
+                cond_icon = "☀️"
+
+            elif 30 <= cloud < 70:
                 cond_name = "PARTLY CLOUDY"
                 cond_icon = "⛅"
+
+            else:
+                cond_name = "CLOUDY"
+                cond_icon = "☁️"
 
             # ML prediction (for the day's forecast features)
             temp_max_today = daily["temperature_2m_max"][0]
@@ -245,10 +255,10 @@ if search and city.strip():
             st.markdown(f"### 📍 {city_name}, {country}")
             st.markdown(f'<div style="text-align:center"><span class="condition-badge">{cond_icon} {cond_name}</span></div>', unsafe_allow_html=True)
 
-            if ml_pred and ml_pred != cond_name:
-                st.info(f"🤖 **ML Model Prediction:** {ml_pred}  |  📡 **Live API:** {cond_name}")
-            elif ml_pred:
-                st.success(f"✅ ML Model & Live API both agree: **{ml_pred}**")
+            st.success(f"📡 Live Weather: {cond_name}")
+
+            if ml_pred:
+                st.info(f"🤖 AI Prediction: {ml_pred}")
 
             # ── Alerts ────────────────────────────────────────────────────
             alerts = get_alerts(temp, wind, precip)
@@ -279,7 +289,7 @@ if search and city.strip():
             st.markdown('<div class="section-header">📅 7-Day Forecast</div>', unsafe_allow_html=True)
             fcols = st.columns(7)
             for i, col in enumerate(fcols):
-                day_date =today = datetime.now(ZoneInfo("Asia/Kolkata"))  + timedelta(days=i)
+                day_date = datetime.now( ZoneInfo("Asia/Kolkata")) + timedelta(days=i)
                 day_name = "Today" if i == 0 else day_date.strftime("%a")
                 fc_code = daily["weather_code"][i]
                 fc_cond, fc_icon = WEATHER_CODES.get(fc_code, ("?", "🌡️"))
