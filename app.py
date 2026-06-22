@@ -228,24 +228,15 @@ if search and city.strip():
             precip      = curr["precipitation"]
             uv          = curr.get("uv_index", "N/A")
             code        = curr["weather_code"]
-            cloud       = curr.get("cloud_cover", 0)
-            st.write("Cloud Cover:", cloud, "%")
-
+            cloud       = curr.get("cloud_cover", 0) 
             # Weather condition
             cond_name, cond_icon = WEATHER_CODES.get(code, ("UNKNOWN", "🌡️"))
-            # Better cloud condition mapping
-            if cloud < 30:
-                cond_name = "SUN"
-                cond_icon = "☀️"
-
-            elif 30 <= cloud < 70:
+            if cloud > 60 and cond_name == "SUN":
                 cond_name = "PARTLY CLOUDY"
                 cond_icon = "⛅"
-
-            else:
-                cond_name = "CLOUDY"
-                cond_icon = "☁️"
-
+            st.success(f"📡 Live API Weather: {cond_name}")
+            st.info(f"☁️ Cloud Cover: {cloud}%") 
+            
             # ML prediction (for the day's forecast features)
             temp_max_today = daily["temperature_2m_max"][0]
             temp_min_today = daily["temperature_2m_min"][0]
